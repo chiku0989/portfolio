@@ -9,6 +9,7 @@ import Link from 'next/link';
 
 interface Props extends FeaturedProjectType, MotionProps {
   align?: 'left' | 'right';
+  className?: string;
 }
 
 const FeaturedProject = ({
@@ -20,6 +21,7 @@ const FeaturedProject = ({
   tasks,
   tags,
   align = 'left',
+  className,
   ...rest
 }: Props) => {
   const showDeploymentLink = !repo || url !== repo;
@@ -28,7 +30,8 @@ const FeaturedProject = ({
     <motion.div
       className={cn(
         'group w-full overflow-hidden rounded-2xl border border-border/40 bg-bg-secondary shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-1 lg:shadow-none',
-        align === 'left' ? 'lg:text-left' : 'lg:text-left'
+        align === 'left' ? 'lg:text-left' : 'lg:text-left',
+        className
       )}
       {...rest}
     >
