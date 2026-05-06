@@ -1,5 +1,11 @@
-'use client';
-import { Player } from '@lottiefiles/react-lottie-player';
+"use client";
+import dynamic from 'next/dynamic';
+
+// Dynamically import Player to avoid server-side execution that accesses `document`
+const Player = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then((mod) => mod.Player),
+  { ssr: false }
+);
 
 type Props = {
   path: any;
