@@ -2,8 +2,8 @@
 module.exports = {
   reactStrictMode: true,
   // Set basePath and assetPrefix for GitHub Pages (served under /portfolio)
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio/',
+  basePath: '',
+  assetPrefix: '/',
   images: {
     remotePatterns: [
       {
